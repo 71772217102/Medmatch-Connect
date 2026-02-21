@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MedMatch Connect</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">MedMatch Connect</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="role">I am a:</label>
+                    <select id="role" required onchange="toggleFreelancerFields()">
+                        <option value="">Select Role</option>
+                        <option value="patient">Patient</option>
+                        <option value="freelancer">Insurance Specialist</option>
+                    </select>
+                </div>
+                <div id="freelancerFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="skills">Skills (comma separated)</label>
+                        <input type="text" id="skills" placeholder="e.g., Medicare, Medicaid, Commercial Insurance">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialization">Specialization</label>
+                        <input type="text" id="specialization" placeholder="e.g., Claims Processing, Prior Authorization">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Register</button>
+            </form>
+            <p class="auth-link">Already have an account? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
